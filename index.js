@@ -250,9 +250,17 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(arr) {
+  let enTakipci = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].followers >= 100000000) {
+      enTakipci.push(arr[i].profile);
+    }
+  }
+  console.log(enTakipci);
+  return enTakipci;
 }
+enFenomenler(fenomenler);
 
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
@@ -263,9 +271,16 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(/*kod*/) {
-  /*kod*/
+function fenomenGonderimSayisi(arr,profileName) {
+  
+  for (let i=0 ; i<arr.length; i++) {
+    if (arr[i].profile === profileName ) {
+      console.log(arr[i].posts);
+      return arr[i].posts;
+    }
+  }
 }
+fenomenGonderimSayisi(fenomenler, "Will Smith");
 
 /* Görev 9:
 Aşağıdakileri yapmak için platformaGoreCokGonderiYapanFenomen'ni kullanın:
