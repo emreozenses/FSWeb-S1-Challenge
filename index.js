@@ -203,13 +203,12 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(arr,index) {
+function fenomenSil(arr, index) {
   const newFenomenListesi = [...arr];
-  newFenomenListesi.splice(index,1);
+  newFenomenListesi.splice(index, 1);
   return newFenomenListesi;
 }
-console.log(fenomenSil(fenomenler,0));
-
+console.log(fenomenSil(fenomenler, 0));
 
 /* Görev 6:
 Aşağıdakileri yapmak için fenomenEkle'i kullanın:
@@ -228,9 +227,20 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
+function fenomenEkle(arr, number, profile, followers, posts, platform) {
+  const newFenomenListesi = [...arr];
+  newFenomenListesi.push({
+    number: number,
+    profile: profile,
+    followers: followers,
+    posts: posts,
+    platform: platform,
+  });
+  return newFenomenListesi;
 }
+console.log(
+  fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram")
+);
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
