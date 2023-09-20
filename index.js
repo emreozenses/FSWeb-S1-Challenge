@@ -271,10 +271,9 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(arr,profileName) {
-  
-  for (let i=0 ; i<arr.length; i++) {
-    if (arr[i].profile === profileName ) {
+function fenomenGonderimSayisi(arr, profileName) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].profile === profileName) {
       console.log(arr[i].posts);
       return arr[i].posts;
     }
@@ -293,9 +292,25 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(/*kod*/) {
-  /*kod*/
+function platformaGoreCokGonderiYapanFenomen(arr, platformName) {
+  let platformGonderiSayisi = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].platform == platformName && Number.isInteger(arr[i].posts)) {
+      platformGonderiSayisi.push(arr[i].posts);
+    }
+  }
+  console.log(platformGonderiSayisi);
+  const Gmax = Math.max(...platformGonderiSayisi);
+  console.log(Gmax);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].posts == Gmax) {
+      console.log(arr[i].profile);
+      return arr[i].profile;
+    }
+  }
 }
+platformaGoreCokGonderiYapanFenomen(fenomenler, "Instagram");
 
 /* ***** GÖREVLERİN SONU ***** */
 
