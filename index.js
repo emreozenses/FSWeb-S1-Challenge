@@ -160,6 +160,9 @@ console.log(fenomenler[3].followers);
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
 Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bieber' ın soyismi 'Biber' olarak yanlış yazılmış. Bu sorunu düzeltin ve çalışmanızı kontrol etmek için console.log() yapın.
+*/
+fenomenler[6].profile = 'Justin Bieber';
+console.log(fenomenler[6].profile);
 
 
 /*  Görev 3:
@@ -171,9 +174,12 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(/*kod*/) {
-  /*kod*/
+function indekseGoreFenomen(arr,index) {
+const mesaj = index + ". indekste bulunan fenomen: " + arr[index].profile;
+console.log(mesaj);
+  return mesaj;
 }
+indekseGoreFenomen(fenomenler,3);
 
 
 
